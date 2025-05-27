@@ -1,3 +1,7 @@
+<!--
+  ISO 15223-1 just changed. Show me all the impacted documents that I need to update.
+
+-->
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
   <head>
@@ -23,11 +27,19 @@
       rel="stylesheet"
       href="assets/css/Team-images.css?h=4f3cfa46e40e236365345fc77963f4b8"
     />
+    <style>
+      .btn {
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+      }
+    </style>
   </head>
 
-  <body>
+  <body style="background-color: #f3f5f8">
     <!-- Start: Navbar With Button -->
-    <nav class="navbar navbar-expand-md bg-body py-3">
+    <nav
+      class="navbar navbar-expand-md bg-body py-4"
+      style="background-color: #f3f5f8; padding-top: 45px; padding-bottom: 45px"
+    >
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#"
           ><span
@@ -75,10 +87,16 @@
         </div>
       </div>
     </nav>
+    <hr
+      style="border: none; border-top: 0.75px solid rgb(0, 0, 0); margin: 0"
+    />
     <!-- End: Navbar With Button -->
 
     <!-- Start: Banner Clean -->
-    <section class="py-4 py-xl-5">
+    <section
+      class="py-5 py-xl-5"
+      style="padding-top: 200px; padding-bottom: 200px"
+    >
       <div class="container">
         <div
           class="text-center p-4 p-lg-5"
@@ -116,7 +134,7 @@
                       <input
                         class="form-control"
                         type="email"
-                        style="margin-bottom: 9px"
+                        style="margin-bottom: 10px"
                         placeholder="Email"
                       />
                     </div>
@@ -132,14 +150,24 @@
               </div>
             </div>
           </div>
-          <h1 class="display-3 fw-bold mb-4" style="padding-top: 0">
-            Get Your Medical Device to Market Faster
+          <h1
+            class="display-3 fw-bold mb-4"
+            style="padding-top: 0; font-size: 2.5rem"
+          >
+            Stop Documenting Your Documentation
           </h1>
-          <p style="padding-bottom: 10px">
-            Bild digests all your engineering data
+          <h2
+            style="
+              padding-bottom: 10px;
+              font-size: 20px;
+              font-weight: 500;
+              color: #444;
+            "
+          >
+            Bild forms connections in your data
             <br />
-            to generate accurate first drafts of documents.
-          </p>
+            and auto-writes first drafts of FDA compliant documents.
+          </h2>
 
           <div class="d-flex align-items-center justify-content-center mb-4">
             <span style="font-size: 1.1rem" class="fw-bold">Backed by</span>
@@ -149,87 +177,43 @@
               style="height: 30px; margin-right: 8px; margin-left: 4px"
             />
           </div>
-
-          <a
-            class="btn btn-dark fs-5 me-2 py-2 px-4"
-            role="button"
-            href="https://calendly.com/rambod-bild-engineering/30min"
-            target="_blank"
-            >Book A Demo</a
-          >
         </div>
       </div>
     </section>
     <!-- End: Banner Clean -->
 
     <div
-      class="container"
+      class="container-fluid"
       style="
-        height: 80vh;
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        min-width: 100vw;
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 0px;
-        margin-bottom: 100px;
-        padding: 0;
       "
     >
-      <div class="row mb-3" style="width: 100%">
-        <div class="text-center mx-auto">
-          <h2 style="font-size: 30.112px">Private, Context-Aware LLM Search</h2>
-        </div>
-      </div>
-      <div style="width: calc(100% - 55px); max-width: 745px; margin: 0 auto">
+      <div class="row mb-3" style="width: 100%"></div>
+      <div style="width: 100vw; height: 100%; margin: 0; padding: 0">
         <iframe
-          src="https://player.vimeo.com/video/1072334480?h=c5daa7c931&autoplay=1&muted=1&loop=1&background=1"
+          src="https://player.vimeo.com/video/1087883400?autoplay=1&muted=1&loop=1&background=1"
           frameborder="0"
-          width="800"
-          height="450"
-          style="
-            width: 100%;
-            height: 450px;
-            pointer-events: none;
-            border-radius: 10px;
-            border: 6px solid #6c757d;
-          "
           allow="autoplay; encrypted-media"
-        ></iframe>
-      </div>
-    </div>
-
-    <div
-      class="container"
-      style="
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0px;
-        margin-bottom: 100px;
-        padding: 0;
-      "
-    >
-      <div class="row mb-3" style="width: 100%">
-        <div class="text-center mx-auto">
-          <h2 style="font-size: 30.112px">Smart ECO Document Checker</h2>
-        </div>
-      </div>
-      <div style="width: calc(100% - 65px); max-width: 735px; margin: 0 auto">
-        <iframe
-          src="https://player.vimeo.com/video/1072335273?h=0ad6bc9c9a&autoplay=1&muted=1&loop=1&background=1"
-          frameborder="0"
-          width="800"
-          height="450"
           style="
-            width: 100%;
-            height: 450px;
+            width: 100vw;
+            height: calc(100vh - 60px);
+            min-height: 400px;
+            min-width: 300px;
             pointer-events: none;
-            border-radius: 10px;
-            border: 6px solid #6c757d;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
           "
-          allow="autoplay; encrypted-media"
         ></iframe>
       </div>
     </div>
@@ -243,6 +227,13 @@
             Join our waitlist to be the first to know about new features and
             updates.
           </p>
+          <a
+            class="btn btn-dark btn-lg fs-5 me-2 py-2 px-4"
+            role="button"
+            href="https://calendly.com/rambod-bild-engineering/30min"
+            target="_blank"
+            >Book A Demo</a
+          >
           <a
             class="btn btn-dark btn-lg fs-5 me-2 py-2 px-4"
             role="button"
@@ -270,7 +261,10 @@
         style="padding-top: 0px"
       >
         <div class="col">
-          <div class="card border-0 shadow-none">
+          <div
+            class="card border-0 shadow-none"
+            style="background-color: #f3f5f8"
+          >
             <div
               class="card-body text-center d-flex flex-column align-items-center p-0"
             >
@@ -296,7 +290,10 @@
           </div>
         </div>
         <div class="col">
-          <div class="card border-0 shadow-none">
+          <div
+            class="card border-0 shadow-none"
+            style="background-color: #f3f5f8"
+          >
             <div
               class="card-body text-center d-flex flex-column align-items-center p-0"
             >
@@ -322,7 +319,10 @@
           </p>
         </div>
         <div class="col">
-          <div class="card border-0 shadow-none">
+          <div
+            class="card border-0 shadow-none"
+            style="background-color: #f3f5f8"
+          >
             <div
               class="card-body text-center d-flex flex-column align-items-center p-0"
             >
