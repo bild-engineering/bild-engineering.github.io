@@ -154,7 +154,7 @@
     <div
       id="videoCarousel"
       class="carousel slide"
-      data-bs-ride="carousel"
+      data-bs-interval="false"
       style="width: 100%; padding-bottom: 40px"
     >
       <div class="carousel-inner">
@@ -162,17 +162,15 @@
           <div style="max-width: 900px; margin: 0 auto">
             <iframe
               class="responsive-video-iframe carousel-video"
-              src="https://player.vimeo.com/video/1087893945?autoplay=1&muted=1&loop=1&background=1"
+              data-src="https://player.vimeo.com/video/1087893945?background=1&title=0&byline=0&portrait=0"
               frameborder="0"
-              allow="autoplay; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
               style="
                 width: 100%;
                 height: auto;
                 aspect-ratio: 16/9;
-                pointer-events: none;
                 border: none;
-                margin: 0 auto;
-                padding: 0;
                 display: block;
               "
             ></iframe>
@@ -182,17 +180,15 @@
           <div style="max-width: 900px; margin: 0 auto">
             <iframe
               class="responsive-video-iframe carousel-video"
-              src="https://player.vimeo.com/video/1097365277?autoplay=1&muted=1&loop=1&background=1"
+              data-src="https://player.vimeo.com/video/1097365277?background=1&title=0&byline=0&portrait=0"
               frameborder="0"
-              allow="autoplay; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
               style="
                 width: 100%;
                 height: auto;
                 aspect-ratio: 16/9;
-                pointer-events: none;
                 border: none;
-                margin: 0 auto;
-                padding: 0;
                 display: block;
               "
             ></iframe>
@@ -467,27 +463,31 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var carousel = document.getElementById("videoCarousel");
-        var iframes = carousel.querySelectorAll(".carousel-video");
-        var players = Array.from(iframes).map(function (iframe) {
-          return new Vimeo.Player(iframe);
+        var slides = carousel.querySelectorAll(".carousel-item");
+        var iframes = Array.from(slides).map(function (slide) {
+          return slide.querySelector("iframe");
         });
 
-        function pauseAllExcept(activeIdx) {
-          players.forEach(function (player, idx) {
+        // Helper to set src for active, remove src for inactive
+        function updateIframes(activeIdx) {
+          iframes.forEach(function (iframe, idx) {
             if (idx === activeIdx) {
-              player.play();
+              if (!iframe.src) {
+                iframe.src = iframe.dataset.src;
+              }
             } else {
-              player.pause();
+              if (iframe.src) {
+                iframe.removeAttribute("src");
+              }
             }
           });
         }
 
-        // Initial state: play first, pause others
-        pauseAllExcept(0);
+        // On load, set src for the first video only
+        updateIframes(0);
 
         carousel.addEventListener("slid.bs.carousel", function (event) {
-          var activeIdx = event.to;
-          pauseAllExcept(activeIdx);
+          updateIframes(event.to);
         });
       });
     </script>
