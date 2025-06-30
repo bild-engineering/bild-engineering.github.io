@@ -41,6 +41,19 @@
         background-repeat: no-repeat;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
       }
+      @font-face {
+        font-family: "Product Sans";
+        src: url("assets/fonts/ProductSans-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      .video-demo-box {
+        opacity: 0.5;
+        transition: opacity 0.2s;
+      }
+      .video-demo-box.active {
+        opacity: 1;
+      }
     </style>
   </head>
 
@@ -124,7 +137,7 @@
             class="display-3 fw-bold mb-4"
             style="padding-top: 10px; font-size: 2.5rem; padding-bottom: 32px"
           >
-            Stop Documenting Your Documentation
+            AI Engineering for Medical Devices
           </h1>
           <h2
             style="
@@ -133,88 +146,125 @@
               font-weight: 500;
               color: #444;
             "
+            class="mb-5"
           >
-            Bild connects your data together and drafts FDA compliant documents.
+            Scale Output, Understand Risk, and Streamline Approvals.
           </h2>
 
-          <div class="d-flex align-items-center justify-content-center mb-4">
-            <span style="font-size: 1.1rem" class="fw-bold">Backed by</span>
-            <img
-              src="assets/img/techstars-logo.png"
-              alt="Techstars Logo"
-              style="height: 30px; margin-right: 8px; margin-left: 4px"
-            />
+          <div
+            class="d-flex flex-column align-items-center justify-content-center mb-4"
+          >
+            <span style="font-size: 1.1rem" class="fw-bold mb-3"
+              >Backed by</span
+            >
+            <div
+              class="d-flex flex-row align-items-center justify-content-center gap-4"
+            >
+              <img
+                src="assets/img/techstars-logo.png"
+                alt="Techstars Logo"
+                style="height: 30px; margin-left: 4px"
+              />
+              <span class="d-flex align-items-center">
+                <img
+                  src="assets/img/google-logo.png"
+                  alt="Google Startups Logo"
+                  style="height: 30px"
+                />
+                <span
+                  style="
+                    font-family: 'Product Sans', Arial, sans-serif;
+                    color: #888;
+                    font-size: 0.9rem;
+                    margin-left: 6px;
+                    vertical-align: middle;
+                    display: inline-block;
+                  "
+                >
+                  Innovation Program
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- End: Banner Clean -->
 
-    <!-- Start: Video Carousel -->
-    <div
-      id="videoCarousel"
-      class="carousel slide"
-      data-bs-interval="false"
-      style="width: 100%; padding-bottom: 40px"
-    >
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div style="max-width: 900px; margin: 0 auto">
-            <iframe
-              class="responsive-video-iframe carousel-video"
-              data-src="https://player.vimeo.com/video/1087893945?background=1&title=0&byline=0&portrait=0"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+    <!-- Start: Video Demo Switcher -->
+    <div class="container py-5">
+      <div id="video-demo-area" style="max-width: 900px; margin: 0 auto">
+        <iframe
+          id="demo-video-iframe"
+          class="responsive-video-iframe"
+          data-src1="https://player.vimeo.com/video/1087893945?background=1&title=0&byline=0&portrait=0"
+          data-src2="https://player.vimeo.com/video/1097365277?background=1&title=0&byline=0&portrait=0"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          style="
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            border: none;
+            display: block;
+            background: #000;
+            border-radius: 16px;
+          "
+        ></iframe>
+      </div>
+      <div style="max-width: 900px; margin: 0 auto">
+        <div class="row mt-4 justify-content-center" id="video-demo-boxes">
+          <div class="col-md-5 mb-3">
+            <div
+              class="video-demo-box active"
+              data-video="1"
               style="
-                width: 100%;
-                height: auto;
-                aspect-ratio: 16/9;
-                border: none;
-                display: block;
+                cursor: pointer;
+                border-radius: 12px;
+                border: 2px solid #222;
+                background: #fff;
+                padding: 24px;
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+                transition: border 0.2s;
               "
-            ></iframe>
+            >
+              <h5 style="font-weight: bold; margin-bottom: 8px">
+                Automate Change Control
+              </h5>
+              <p style="margin-bottom: 0; color: #444">
+                Instantly identify impacted documents with every regulatory or
+                design change.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <div style="max-width: 900px; margin: 0 auto">
-            <iframe
-              class="responsive-video-iframe carousel-video"
-              data-src="https://player.vimeo.com/video/1097365277?background=1&title=0&byline=0&portrait=0"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
+          <div class="col-md-5 mb-3">
+            <div
+              class="video-demo-box"
+              data-video="2"
               style="
-                width: 100%;
-                height: auto;
-                aspect-ratio: 16/9;
-                border: none;
-                display: block;
+                cursor: pointer;
+                border-radius: 12px;
+                border: 2px solid #ccc;
+                background: #fff;
+                padding: 24px;
+                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+                transition: border 0.2s;
               "
-            ></iframe>
+            >
+              <h5 style="font-weight: bold; margin-bottom: 8px">
+                Inspection Report Reviewer
+              </h5>
+              <p style="margin-bottom: 0; color: #444">
+                Flag out-of-spec dimensions and verify engineering requirements
+                in minutes.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#videoCarousel"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#videoCarousel"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-    <!-- End: Video Carousel -->
+    <!-- End: Video Demo Switcher -->
 
     <!-- Start: Waitlist Section -->
     <div class="container py-4 py-xl-5">
@@ -462,32 +512,33 @@
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var carousel = document.getElementById("videoCarousel");
-        var slides = carousel.querySelectorAll(".carousel-item");
-        var iframes = Array.from(slides).map(function (slide) {
-          return slide.querySelector("iframe");
-        });
-
-        // Helper to set src for active, remove src for inactive
-        function updateIframes(activeIdx) {
-          iframes.forEach(function (iframe, idx) {
-            if (idx === activeIdx) {
-              if (!iframe.src) {
-                iframe.src = iframe.dataset.src;
-              }
+        var iframe = document.getElementById("demo-video-iframe");
+        var boxes = document.querySelectorAll(".video-demo-box");
+        // Helper to switch video
+        function showVideo(idx) {
+          boxes.forEach(function (box, i) {
+            if (box.getAttribute("data-video") == idx) {
+              box.classList.add("active");
+              box.style.border = "2px solid #222";
             } else {
-              if (iframe.src) {
-                iframe.removeAttribute("src");
-              }
+              box.classList.remove("active");
+              box.style.border = "2px solid #ccc";
             }
           });
+          var src = iframe.getAttribute("data-src" + idx);
+          if (iframe.src !== src) {
+            iframe.removeAttribute("src"); // reset
+            setTimeout(function () {
+              iframe.src = src;
+            }, 50); // force reload
+          }
         }
-
-        // On load, set src for the first video only
-        updateIframes(0);
-
-        carousel.addEventListener("slid.bs.carousel", function (event) {
-          updateIframes(event.to);
+        // Initial load: show first video
+        showVideo(1);
+        boxes.forEach(function (box) {
+          box.addEventListener("click", function () {
+            showVideo(this.getAttribute("data-video"));
+          });
         });
       });
     </script>
