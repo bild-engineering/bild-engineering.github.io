@@ -73,6 +73,7 @@
       const section = document.getElementById('code-section');
       if (code) {
         section.innerHTML = `
+          <div style="font-weight: 500; margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.01em;">One-Time Code</div>
           <div class="code-box" id="code-box">${code}</div><br>
           <button class="copy-btn" onclick="copyCode()">Copy</button>
           <div class="message" id="copy-message"></div>
