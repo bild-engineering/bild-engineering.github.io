@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box OAuth Callback</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .code-box {
+      font-size: 1.3rem;
+      background: #f0f4fa;
+      border: 1px solid #d0d7e2;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      word-break: break-all;
+      display: inline-block;
+    }
+    .copy-btn {
+      background: #0072ec;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+    .copy-btn:active {
+      background: #005bb5;
+    }
+    .message {
+      color: #888;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Box OAuth Callback</h2>
+    <div id="code-section"></div>
+  </div>
+  <script>
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    function showCode() {
+      const code = getQueryParam('code');
+      const section = document.getElementById('code-section');
+      if (code) {
+        section.innerHTML = `
+          <div class="code-box" id="code-box">${code}</div><br>
+          <button class="copy-btn" onclick="copyCode()">Copy</button>
+          <div class="message" id="copy-message"></div>
+        `;
+      } else {
+        section.innerHTML = '<div class="message">No code found in the URL.</div>';
+      }
+    }
+
+    function copyCode() {
+      const code = getQueryParam('code');
+      if (!code) return;
+      navigator.clipboard.writeText(code).then(() => {
+        document.getElementById('copy-message').textContent = 'Copied!';
+        setTimeout(() => {
+          document.getElementById('copy-message').textContent = '';
+        }, 1500);
+      });
+    }
+
+    showCode();
+  </script>
+</body>
+</html> 
