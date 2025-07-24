@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Box OAuth Callback</title>
+  <title>Box One-Time Code</title>
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -59,7 +59,8 @@
     </div>
   </div>
   <div class="container">
-    <h2>Box OAuth Callback</h2>
+    <h2>Box One-Time Code</h2>
+    <div style="margin-bottom: 1.2rem; color: #444; font-size: 1rem; font-weight: 400; font-style: italic;">Do not share this code with anyone.</div>
     <div id="code-section"></div>
   </div>
   <script>
@@ -73,7 +74,6 @@
       const section = document.getElementById('code-section');
       if (code) {
         section.innerHTML = `
-          <div style="font-weight: 500; margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.01em;">One-Time Code</div>
           <div class="code-box" id="code-box">${code}</div><br>
           <button class="copy-btn" onclick="copyCode()">Copy</button>
           <div class="message" id="copy-message"></div>
